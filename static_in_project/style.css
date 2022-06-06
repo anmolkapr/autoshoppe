@@ -225,7 +225,7 @@ a[data-original-title="Tumbler"] { background: #32506d; }
 header#header{box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.25);}
 body iframe{border:none;width:100%;}
 /*Logo Style Start*/
-.cs-logo{padding-top:15px;}
+.cs-logo{padding-top:10px;}
 /*Navigation Style Start*/
 .main-navigation{}
 .main-navigation ul{list-style:none;position:relative;margin:0;padding:0;display:block;}
@@ -578,7 +578,7 @@ body iframe{border:none;width:100%;}
 .blog-listing.medium-view .post-detail span a{text-decoration: none; color: #999;}
 .blog-listing.medium-view .post-detail span.post-comments{float: right; margin-right: 0;}
 .blog-listing.medium-view .post-detail span.post-comments a{color: #999;}
-.blog-listing.medium-view .post-detail span.post-date{; margin-right: 30px; float: right;}
+.blog-listing.medium-view .post-detail span.post-date{ margin-right: 30px; float: right;}
 .blog-listing.medium-view .cs-text .btn-more{display: inline-block; text-transform: uppercase; padding: 2px 25px; border-radius: 20px; font-size: 10px; letter-spacing: 1px; border: 1px solid; text-decoration: none;}
 .blog-listing.medium-view .cs-text p{margin-bottom: 30px;}
 .blog-listing.medium-view .cs-media figcaption{position: absolute; top: 0; left: 0; width: 100%; height: 100%; transition:all 0.3s ease-in-out 0s;}
