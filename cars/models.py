@@ -37,7 +37,7 @@ class Car(models.Model):
     fuel=models.IntegerField()
     price=models.IntegerField()
     description=models.TextField()
-    date=models.DateField(auto_now_add=True)
+    date=models.DateField()
 
     def __str__(self):
         return self.brand

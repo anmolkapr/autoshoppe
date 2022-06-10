@@ -6,10 +6,12 @@ from .models import Car
 def index(request):
     new_cars = Car.objects.filter(category='New')[:6]
     used_cars = Car.objects.filter(category='Used')[:6]
+    latest_cars= Car.objects.all().order_by('-date')[:5]
 
     context={
         'new_cars':new_cars,
-        'used_cars':used_cars
+        'used_cars':used_cars,
+        'latest_cars':latest_cars
     }
     return render(request,'index.html', context)
 
