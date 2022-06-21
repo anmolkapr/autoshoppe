@@ -8,6 +8,8 @@
 # from unicodedata import category
 from django.db import models
 import datetime
+
+from django.urls import reverse
 from dealers.models import Dealer 
 
 # Create your models here.
@@ -42,3 +44,7 @@ class Car(models.Model):
     def __str__(self):
         return self.brand
 
+    def get_absolute_url(self):
+        return reverse('car_detail',kwargs = {
+            "car_id":self.id
+        })
