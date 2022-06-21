@@ -23,7 +23,9 @@ from cars import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.index,name="index"),
+    path('<int:car_id>',views.car_detail,name="car_detail"),
     path('filter_results',views.filter_results,name="filter_results"),
+    
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)

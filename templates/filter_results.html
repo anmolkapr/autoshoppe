@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
+<div class="container">
 <div class="main-search">
     <form method="get" action="{% url 'filter_results' %}">
         <div class="col-lg-2 col-md-2 col-sm-4 col-xs-4">
@@ -57,10 +57,11 @@
                 <div class="cs-media"> <i class="icon-car228 cs-color" style="font-size:20px"> </i> {{car.transmission}}</div>
                 <div>Fuel Capacity: {{car.fuel}} Lts</div>
                 <div>Year: {{car.year}}</div>
-                <a href="#" class="View-btn">View Detail<i class=" icon-arrow-long-right"></i></a> </div>
+                <a href="{{car.get_absolute_url}}" class="View-btn">View Detail<i class=" icon-arrow-long-right"></i></a> </div>
         </div>
     </div>
     {% endfor %}
+</div>
 </div>
 
 {% endblock content %}

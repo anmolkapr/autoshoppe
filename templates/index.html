@@ -140,7 +140,7 @@
 															<div class="cs-media"> <i class="icon-car228 cs-color" style="font-size:20px"> </i> {{car.transmission}}</div>
 										                    <div>Fuel Capacity: {{car.fuel}} Lts</div>
 															<div>Year: {{car.year}}</div>
-															<a href="#" class="View-btn">View Detail<i class=" icon-arrow-long-right"></i></a> </div>
+															<a href="{{car.get_absolute_url}}" class="View-btn">View Detail<i class=" icon-arrow-long-right"></i></a> </div>
 													</div>
 												</div>
 												{% endfor %}
@@ -163,7 +163,7 @@
 															<div class="cs-media"> <i class="icon-car228 cs-color" style="font-size:20px"> </i> {{car.transmission}}</div>
 										                    <div>Fuel Capacity: {{car.fuel}} Lts</div>
 															<div>Year: {{car.year}}</div>
-															<a href="#" class="View-btn">View Detail<i class=" icon-arrow-long-right"></i></a> </div>
+															<a href="{{car.get_absolute_url}}" class="View-btn">View Detail<i class=" icon-arrow-long-right"></i></a> </div>
 													</div>
 												</div>
 												{% endfor %}
@@ -200,16 +200,12 @@
 												<figure> <a href="#"> <img src= "{{car.image_main.url}}" alt=""/> </a>
 													<figcaption> </figcaption>
 												</figure>
-												<div class="caption-text"> <a href="#">
-													<h2> Avalon Hybrid
-														Built for the
-														endless weekend. </h2>
-													</a> </div>
+												
 											</div>
 											{{car.brand}}
 											<br>
 											CATEGORY:  {{car.category}}
-											<div class="auto-text cs-bgcolor"> <span>${{car.price}}</span> <a href="#" class="cs-button pull-right"><i class="icon-arrow_forward
+											<div class="auto-text cs-bgcolor"> <span>${{car.price}}</span> <a href="{{car.get_absolute_url}}" class="cs-button pull-right"><i class="icon-arrow_forward
 "></i></a> </div>
 										</li>
 										{% endfor %}
