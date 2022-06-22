@@ -1,15 +1,27 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="container">
-<h4>DEALER: {{cars.dealer.name}}</h4>
+
+<div class="container" >
+    <div class="card mb-3" style="max-width: 1050px;display: flex;justify-content: space-around;margin-top: 15px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="{{cars.image_main.url}}" class="img-fluid rounded-start" alt="...">
+          </div>
+          
+        </div>
+      </div>
+    </br>
+  
+<div style="display: flex;justify-content: space-around;  "><h4>DEALER: {{cars.dealer.name}}</h4>
 </br>
 <h4>DEALER EMAIL: {{cars.dealer.email}}</h4>
 </br>
 <h4>BRAND: {{cars.brand}}</h4>
 </br>
 <h4>CATEGORY: {{cars.category}}</h4>
-</br>
+</br></div>
+<div style="display: flex;justify-content: space-around;  ">
 <h4>MILES: {{cars.miles}}</h4>
 </br>
 <h4>TRANSMISSION: {{cars.transmission}}</h4>
@@ -23,9 +35,13 @@
 
 </br>
 <h4>PRICE: $ {{cars.price}} </h4>
+</div>
+<div style="display: flex;justify-content: space-around;  ">
 </br>
 {{cars.description}}
 </br>
+</div>
+<div style="display: flex;justify-content: space-around;  ">
 <div class="row">
     {% if cars.image1 %}
     <div class="col-md-3">
@@ -58,5 +74,5 @@
     {% endif %}
 </div>
 </div>
-
+</div>
 {% endblock content %}
