@@ -3,6 +3,7 @@ from django.shortcuts import render,get_object_or_404
 from django.core.paginator import Paginator,EmptyPage,PageNotAnInteger
 from .models import Car
 from .filters import CarFilter
+from dealers.models import Dealer
 # Create your views here.
 # created a function which will render the request
 def index(request):
@@ -70,6 +71,16 @@ def inventory(request):
         'page_obj':page_obj
     }
     return render(request,"inventory.html",context)
+
+def dealers(request):
+    all_dealers= Dealer.objects.all()
+
+    context = {
+        'all_dealers':all_dealers,
+    }
+
+    return render(request,"dealers.html",context)
+
 
 
 
