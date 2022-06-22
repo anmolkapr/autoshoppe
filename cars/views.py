@@ -4,6 +4,8 @@ from django.core.paginator import Paginator,EmptyPage,PageNotAnInteger
 from .models import Car
 from .filters import CarFilter
 from dealers.models import Dealer
+from django.core.mail import send_mail
+
 # Create your views here.
 # created a function which will render the request
 def index(request):
@@ -80,6 +82,24 @@ def dealers(request):
     }
 
     return render(request,"dealers.html",context)
+
+
+def contact(request):
+    if request.method == "POST":
+        name = request.POST['name']
+        email = request.POST['email']
+        message = request.POST['message']
+
+        send_mail(
+            'Question from ' + name + '  Email: ' + email,
+            message,
+            email,
+            ['']
+        )
+        return render(request, 'contact.html')
+    else:
+        return render(request, 'contact.html')
+       
 
 
 
