@@ -1,5 +1,6 @@
 
 from django.shortcuts import render,get_object_or_404
+from django.core.paginator import Paginator,EmptyPage,PageNotAnInteger
 from .models import Car
 from .filters import CarFilter
 # Create your views here.
@@ -25,10 +26,21 @@ def filter_results(request):
     all=Car.objects.all()
     myFilter=CarFilter(request.GET,queryset=all)
     all=myFilter.qs
-        
+    page=request.GET.get('page')
+    paginator= Paginator(all,4)
+    try:
+        all=paginator.page(page)
+    except PageNotAnInteger:
+        all= paginator.page('1')
+    except EmptyPage:
+        all= paginator.page(paginator.num_pages)
+
+    page_obj= paginator.get_page(page)
+
     context = {
         'all': all,
-        'myFilter':myFilter
+        'myFilter':myFilter,
+        'page_obj':page_obj
     }
 
     return render(request,"filter_results.html",context)
