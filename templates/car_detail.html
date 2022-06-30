@@ -3,6 +3,7 @@
 {% block content %}
 
 <div class="container" >
+    
     <div class="card mb-3" style="max-width: 1050px;display: flex;justify-content: space-around;margin-top: 15px;">
         <div class="row g-0">
           <div class="col-md-4">
@@ -41,38 +42,20 @@
 {{cars.description}}
 </br>
 </div>
-<div style="display: flex;justify-content: space-around;  ">
-<div class="row">
-    {% if cars.image1 %}
-    <div class="col-md-3">
-        <img src="{{cars.image1.url}}" alt="">
-    </div>
-    {% endif %}
+<div style="display: flex;justify-content: space-around;margin-top: 20px;margin-bottom: 20px; ">
+    <form action="{% url 'charge' %}" method="post">
+        {% csrf_token %}
+    
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button "
+    data-key="{{key}}"
+    data-description="A Django Charge"
+    data-amount="{{cars.price}}00"
+    data-locale="auto"
+></script>
+</form>
+
+
+
 </div>
-</br>
-<div class="row">
-    {% if cars.image2 %}
-    <div class="col-md-3">
-        <img src="{{cars.image2.url}}" alt="">
-    </div>
-    {% endif %}
-</div>
-</br>
-<div class="row">
-    {% if cars.image3 %}
-    <div class="col-md-3">
-        <img src="{{cars.image3.url}}" alt="">
-    </div>
-    {% endif %}
-</div>
-</br>
-<div class="row">
-    {% if cars.image4 %}
-    <div class="col-md-3">
-        <img src="{{cars.image4.url}}" alt="">
-    </div>
-    {% endif %}
-</div>
-</div>
-</div>
+
 {% endblock content %}

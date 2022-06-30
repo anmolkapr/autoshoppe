@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'cars',
     'dealers',
     'django_filters',
+    # Local
+    'payments.apps.PaymentsConfig', # new
 ]
 
 MIDDLEWARE = [
@@ -137,3 +139,6 @@ EMAIL_USE_TLS = True
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+STRIPE_PUBLISHABLE_KEY = 'pk_test_51LGGjySGT7kr9o0sQRArY5gMyifxcfh7wuUNjGz5OLg6gfshCXNPUVvi3SSBw5ET5micvV7rrUhZZNrtKn7B1mLk00HlVgxicF'
+STRIPE_SECRET_KEY = 'sk_test_51LGGjySGT7kr9o0sJRbQt8zNfCdd8hGIXJSIAf0k5ggxFAQSzJ3ZwW0Xa3UYlzQH5kDd7qpJdEMDgG6pZQ4B47CU00eUx1fCTZ'

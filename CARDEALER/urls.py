@@ -15,7 +15,7 @@ Including another URLconf
 """
 
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,include
 from django.conf.urls.static import static
 from django.conf import settings
 from cars import views
@@ -23,6 +23,7 @@ from cars import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name="index"),
+    path('', include('payments.urls')), # new
     path('inventory', views.inventory, name="inventory"),
     path('<int:car_id>',views.car_detail,name="car_detail"),
     path('filter_results',views.filter_results,name="filter_results"),
